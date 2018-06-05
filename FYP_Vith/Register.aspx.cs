@@ -11,25 +11,33 @@ namespace FYP_Vith
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["register"]!= null)
+            if (Request.QueryString["register"] != null)
             {
-                try
+
+                String email = Request.Form["email"];
+                String username = Request.Form["username"];
+                String password = Request.Form["password"];
+                String userRole = "Employee";
+                bool isUserExist = new helper().isUserExist(username);
+                bool isEmailExist = new helper().isEmailExists(email);
+                if (!isUserExist)
                 {
-                    String email = Request.Form["email"];
-                    String username = Request.Form["username"];
-                    String password = Request.Form["password"];
-                    String userRole = "Employee";
-                    String query = "INSERT INTO Users (Username, Email, Password, UserRole) VALUES ('" + username + "','" + email + "','" + password + "','" + userRole + "')";
-                    helper.executeQuery(query);
+                    if (!isEmailExist)
+                    {
+                        String query = "INSERT INTO Users (Username, Email, Password, UserRole) VALUES ('" + username + "','" + email + "','" + password + "','" + userRole + "')";
+                        helper.executeQuery(query);
+                        Response.Redirect("Login.aspx?registersuccess=true");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Email already exists!');</script");
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Response.Write("<script>alert('"+ex+"');</script");
+                    Response.Write("<script>alert('Username already exists!');</script");
                 }
-                finally
-                {
-                    Response.Redirect("Login.aspx?registersuccess=true");
-                }
+
             }
 
         }

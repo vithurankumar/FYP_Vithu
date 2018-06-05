@@ -40,7 +40,7 @@ namespace FYP_Vith
 
         public bool isUserExist(String username)
         {
-            String query = "SELECT Username FROM Users where Username = '" + username + "'";
+            String query = "SELECT Username FROM Users where Username='" + username + "'";
             SqlConnection conn = getConnection();
             conn.Open();
             SqlCommand cm = new SqlCommand(query, conn);
@@ -53,6 +53,22 @@ namespace FYP_Vith
             closeConnection(conn);
             return flag;
         }
+        public bool isEmailExists(String email)
+        {
+            String query = "SELECT Email FROM Users where Email='" + email + "'";
+            SqlConnection conn = getConnection();
+            conn.Open();
+            SqlCommand cm = new SqlCommand(query, conn);
+            SqlDataReader sdr = cm.ExecuteReader();
+            bool flag = false;
+            if (sdr.HasRows)
+            {
+                flag = true;
+            }
+            closeConnection(conn);
+            return flag;
+        }
+
         public bool Login(String username, string password)
         {
 
