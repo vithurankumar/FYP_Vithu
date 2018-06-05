@@ -128,10 +128,10 @@
                         </li>
                         <li class="menu-title">Information</li>
                         <li>
-                            <a href="index.html" class="waves-effect waves-primary"><i class="ti-files"></i><span>About Us </span></a>
+                            <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="ti-files"></i><span>About Us </span></a>
                         </li>
                         <li>
-                            <a href="index.html" class="waves-effect waves-primary"><i class="ti-files"></i><span>Contact Us </span></a>
+                            <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="ti-files"></i><span>Contact Us </span></a>
                         </li>
                     </ul>
                     <div class="clearfix"></div>
