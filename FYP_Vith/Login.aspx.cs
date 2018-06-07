@@ -38,6 +38,10 @@ namespace FYP_Vith
                         Response.Redirect("AdminDefault.aspx");
                     }
                 }
+                else
+                {
+                    Response.Write("<script>alert('Login failed, incorrect username or password');</script");
+                }
             }
         }
     }

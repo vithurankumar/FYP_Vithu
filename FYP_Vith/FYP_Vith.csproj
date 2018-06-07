@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HRDefault.aspx" />
     <Content Include="packages.config" />
     <Content Include="Default.Master" />
     <Content Include="assets\fonts\fontawesome-webfont3e6e.eot" />
@@ -321,6 +322,7 @@
     <Content Include="plugins\x-editable\dist\bootstrap3-editable\img\loading.gif" />
     <Content Include="plugins\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.min.js" />
     <Content Include="Register.aspx" />
+    <Content Include="test.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -346,6 +348,13 @@
       <DependentUpon>Emp_Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="helper.cs" />
+    <Compile Include="HRDefault.aspx.cs">
+      <DependentUpon>HRDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HRDefault.aspx.designer.cs">
+      <DependentUpon>HRDefault.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

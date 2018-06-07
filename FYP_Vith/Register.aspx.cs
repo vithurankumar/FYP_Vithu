@@ -13,7 +13,6 @@ namespace FYP_Vith
         {
             if (Request.QueryString["register"] != null)
             {
-
                 String email = Request.Form["email"];
                 String username = Request.Form["username"];
                 String password = Request.Form["password"];
