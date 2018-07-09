@@ -65,7 +65,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HRDefault.aspx" />
+    <Content Include="Admin_Default.aspx" />
+    <Content Include="Admin_Enquiries.aspx" />
+    <Content Include="Admin_Manage_Employee.aspx" />
+    <Content Include="Admin_Manage_HRM.aspx" />
+    <Content Include="assets\images\user-2-icon.png" />
+    <Content Include="assets\images\users\download.png" />
+    <Content Include="Contactus.aspx" />
+    <Content Include="Employee_Add_Enquiries.aspx" />
+    <Content Include="Employee_Default.aspx" />
+    <Content Include="Employee_Profile.aspx" />
+    <Content Include="Manager_Default.aspx" />
+    <Content Include="Manager_Enquiries.aspx" />
+    <Content Include="Manager_Manage_Allowance.aspx" />
+    <Content Include="Manager_Manage_Employee.aspx" />
     <Content Include="packages.config" />
     <Content Include="Default.Master" />
     <Content Include="assets\fonts\fontawesome-webfont3e6e.eot" />
@@ -186,7 +199,6 @@
     <Content Include="assets\pages\morris.init.js" />
     <Content Include="assets\pages\nestable.js" />
     <Content Include="Default.aspx" />
-    <Content Include="Emp_Profile.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="plugins\bootstrap-datepicker\dist\css\bootstrap-datepicker.min.css" />
@@ -322,10 +334,44 @@
     <Content Include="plugins\x-editable\dist\bootstrap3-editable\img\loading.gif" />
     <Content Include="plugins\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.min.js" />
     <Content Include="Register.aspx" />
-    <Content Include="test.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Default.aspx.cs">
+      <DependentUpon>Admin_Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Default.aspx.designer.cs">
+      <DependentUpon>Admin_Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Enquiries.aspx.cs">
+      <DependentUpon>Admin_Enquiries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Enquiries.aspx.designer.cs">
+      <DependentUpon>Admin_Enquiries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Manage_Employee.aspx.cs">
+      <DependentUpon>Admin_Manage_Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Manage_Employee.aspx.designer.cs">
+      <DependentUpon>Admin_Manage_Employee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Manage_HRM.aspx.cs">
+      <DependentUpon>Admin_Manage_HRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Manage_HRM.aspx.designer.cs">
+      <DependentUpon>Admin_Manage_HRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contactus.aspx.cs">
+      <DependentUpon>Contactus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactus.aspx.designer.cs">
+      <DependentUpon>Contactus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -340,21 +386,28 @@
     <Compile Include="Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
-    <Compile Include="Emp_Profile.aspx.cs">
-      <DependentUpon>Emp_Profile.aspx</DependentUpon>
+    <Compile Include="Employee_Add_Enquiries.aspx.cs">
+      <DependentUpon>Employee_Add_Enquiries.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Emp_Profile.aspx.designer.cs">
-      <DependentUpon>Emp_Profile.aspx</DependentUpon>
+    <Compile Include="Employee_Add_Enquiries.aspx.designer.cs">
+      <DependentUpon>Employee_Add_Enquiries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Default.aspx.cs">
+      <DependentUpon>Employee_Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee_Default.aspx.designer.cs">
+      <DependentUpon>Employee_Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Profile.aspx.cs">
+      <DependentUpon>Employee_Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee_Profile.aspx.designer.cs">
+      <DependentUpon>Employee_Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="helper.cs" />
-    <Compile Include="HRDefault.aspx.cs">
-      <DependentUpon>HRDefault.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HRDefault.aspx.designer.cs">
-      <DependentUpon>HRDefault.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -368,6 +421,34 @@
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Default.aspx.cs">
+      <DependentUpon>Manager_Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager_Default.aspx.designer.cs">
+      <DependentUpon>Manager_Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Enquiries.aspx.cs">
+      <DependentUpon>Manager_Enquiries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager_Enquiries.aspx.designer.cs">
+      <DependentUpon>Manager_Enquiries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Manage_Allowance.aspx.cs">
+      <DependentUpon>Manager_Manage_Allowance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager_Manage_Allowance.aspx.designer.cs">
+      <DependentUpon>Manager_Manage_Allowance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Manage_Employee.aspx.cs">
+      <DependentUpon>Manager_Manage_Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager_Manage_Employee.aspx.designer.cs">
+      <DependentUpon>Manager_Manage_Employee.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">

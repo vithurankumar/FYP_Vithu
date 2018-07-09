@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Emp_Profile.aspx.cs" Inherits="FYP_Vith.Emp_Profile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Manage_HRM.aspx.cs" Inherits="FYP_Vith.Admin_Manage_HRM" %>
 
 <!DOCTYPE html>
 

@@ -7,14 +7,17 @@ using System.Web.UI.WebControls;
 
 namespace FYP_Vith
 {
-    public partial class HRDefault : System.Web.UI.Page
+    public partial class Admin_Manage_Employee : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["textyea"] != null)
+            if (Session["UserRole"] != null && Session["UserRole"].ToString() == "Administrator")
             {
-                string text = Request.Form["txt"];
-                Response.Write("<script>alert('"+text+"')</script>");
+
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
             }
         }
     }

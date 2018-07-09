@@ -58,30 +58,29 @@
                                 <i class="mdi mdi-account"></i><span>Login</span>
                             </a>
 
-                            <!-- item-->
-                            <a href="Register.aspx" class="dropdown-item notify-item">
-                                <i class="mdi mdi-logout"></i><span>Register</span>
-                            </a>
-
                         </div>
                     </li>
                     <%}
-                    else
-                    {%>
+                        else
+                        {%>
                     <li class="list-inline-item dropdown notification-list">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="false" aria-expanded="false">
-                            <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                            <img src="assets/images/users/download.png" alt="user" class="rounded-circle">
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown" aria-labelledby="Preview">
                             <div class="dropdown-item noti-title">
-                                <h5 class="text-center"><small>Welcome! <%=userrole %></small></h5>
+                                <span class="text-center"><small>Welcome! <%=userrole %></small></span>
                             </div>
+                            <%
+                                if (userrole == "Employee")
+                                {
+                            %>
                             <!-- item-->
                             <a href="Emp_Profile.aspx" class="dropdown-item notify-item">
                                 <i class="mdi mdi-account"></i><span>Profile</span>
                             </a>
-
+                            <%} %>
                             <!-- item-->
                             <a href="Logout.aspx" class="dropdown-item notify-item">
                                 <i class="mdi mdi-logout"></i><span>Logout</span>
@@ -114,25 +113,79 @@
                 <div id="sidebar-menu">
                     <ul>
                         <li class="menu-title">Main Menu</li>
+                        <%
+                            if (userrole == "Employee")
+                            {
+                        %>
                         <li>
-                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Dashboard </span></a>
+                            <a href="Employee_Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>E Dashboard </span></a>
+                        </li>
+                        <li>
+                            <a href="Employee_Profile.aspx" class="waves-effect waves-primary"><i class="ti-user"></i><span>My Profile </span></a>
                         </li>
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="ti-paint-bucket"></i><span>Example Menu </span>
+                            <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="ti-paint-bucket"></i><span>Enquiries </span>
                                 <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="ui-buttons.html">Sample1</a></li>
-                                <li><a href="ui-buttons.html">Sample2</a></li>
-
+                                <li><a href="ui-buttons.html">Add Enquiry</a></li>
+                                <li><a href="ui-buttons.html">View Enquiry</a></li>
                             </ul>
                         </li>
                         <li class="menu-title">Information</li>
                         <li>
-                            <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="ti-files"></i><span>About Us </span></a>
+                            <a href="Contactus.aspx" class="waves-effect waves-primary"><i class="ti-envelope"></i><span>Contact Us </span></a>
+                        </li>
+                        <%}
+                            else if (userrole == "Administrator")
+                            {
+                        %>
+                        <li>
+                            <a href="Admin_Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>A Dashboard </span></a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="ti-files"></i><span>Contact Us </span></a>
+                            <a href="Admin_Enquiries.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>View Enquiries </span></a>
                         </li>
+                        <li>
+                            <a href="Admin_Manage_Employee.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Manage Employees </span></a>
+                        </li>
+                        <li>
+                            <a href="Admin_Manage_HRM.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Manage HRM </span></a>
+                        </li>
+                        <li class="menu-title">Information</li>
+                        <li>
+                            <a href="Contactus.aspx" class="waves-effect waves-primary"><i class="ti-envelope"></i><span>Contact Us </span></a>
+                        </li>
+                        <%}
+                            else if (userrole == "HRM")
+                            {
+                        %>
+                        <li>
+                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>H Dashboard </span></a>
+                        </li>
+                        <li>
+                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>View Enquiries </span></a>
+                        </li>
+                        <li>
+                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Manage Employees </span></a>
+                        </li>
+                        <li>
+                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Manage Allowances </span></a>
+                        </li>
+                        <li class="menu-title">Information</li>
+                        <li>
+                            <a href="Contactus.aspx" class="waves-effect waves-primary"><i class="ti-envelope"></i><span>Contact Us </span></a>
+                        </li>
+                        <%}
+                            else
+                            { %>
+                        <li>
+                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Dashboard </span></a>
+                        </li>
+                        <li class="menu-title">Information</li>
+                        <li>
+                            <a href="Contactus.aspx" class="waves-effect waves-primary"><i class="ti-envelope"></i><span>Contact Us </span></a>
+                        </li>
+                        <%} %>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
@@ -179,30 +232,94 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/jquery.nicescroll.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <!-- <script src="../plugins/switchery/switchery.min.js"></script>
-        
-        <!-- Counter Up  -->
-    <script src="../plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-    <script src="../plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="../plugins/switchery/switchery.min.js"></script>
 
-    <%--    		<script src="plugins/morris/morris.min.js"></script>
-		<script src="plugins/raphael/raphael-min.js"></script>
+    <!-- Required datatable js -->
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="plugins/datatables/jszip.min.js"></script>
+    <script src="plugins/datatables/pdfmake.min.js"></script>
+    <script src="plugins/datatables/vfs_fonts.js"></script>
+    <script src="plugins/datatables/buttons.html5.min.js"></script>
+    <script src="plugins/datatables/buttons.print.min.js"></script>
 
-        <!-- Page js  -->
-    <script src="assets/pages/jquery.dashboard.js"></script>--%>
+    <!-- Key Tables -->
+    <script src="plugins/datatables/dataTables.keyTable.min.js"></script>
 
-    <!-- Custom main Js -->
+    <!-- Responsive examples -->
+    <script src="plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+    <!-- Selection table -->
+    <script src="plugins/datatables/dataTables.select.min.js"></script>
+
+    <!-- App js -->
     <script src="assets/js/jquery.core.js"></script>
     <script src="assets/js/jquery.app.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // Default Datatable
+            $('#datatable').DataTable();
+
+            //Buttons examples
+            var table = $('#datatable-buttons').DataTable({
+                lengthChange: false,
+                buttons: ['copy', 'excel', 'pdf']
+            });
+
+            // Key Tables
+
+            $('#key-table').DataTable({
+                keys: true
+            });
+
+            // Responsive Datatable
+            $('#responsive-datatable').DataTable();
+
+            // Multi Selection Datatable
+            $('#selection-datatable').DataTable({
+                select: {
+                    style: 'multi'
+                }
+            });
+
+            table.buttons().container()
+                .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+
+
+            
+        });
+
+        function checksalary() {
+            var position = $('#position').find(":selected").text();
+            if (position == "Junior Employee") {
+                $('#salary').val("3000");
+            }
+            if (position == "Senior Employee") {
+                $('#salary').val("6000");
+            }
+            if (position == "Manager") {
+                $('#salary').val("1000");
+            }
+            if (position == "Senior Manager") {
+                $('#salary').val("15000");
+            }
+        }
+    </script>
+
 
     <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $('.counter').counterUp({
-                delay: 100,
-                time: 1200
+            jQuery(document).ready(function ($) {
+                $('.counter').counterUp({
+                    delay: 100,
+                    time: 1200
+                });
             });
-        });
     </script>
 
 </body>

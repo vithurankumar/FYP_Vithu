@@ -11,7 +11,7 @@ namespace FYP_Vith
 {
 
 
-    public partial class Emp_Profile
+    public partial class Manager_Default
     {
 
         /// <summary>

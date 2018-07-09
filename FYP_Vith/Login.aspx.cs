@@ -23,19 +23,20 @@ namespace FYP_Vith
                 bool loginResult = new helper().Login(username, password);
                 if(loginResult == true)
                 {
+
                     String userRole = Session["UserRole"].ToString();
                     if (userRole.Equals("Employee"))
                     {
-                        Response.Redirect("Default.aspx");
+                        Response.Redirect("Employee_Default.aspx");
                     }
-                    if (userRole.Equals("HR"))
+                    if (userRole.Equals("HRM"))
                     {
-                        Response.Redirect("HRDefault.aspx");
+                        Response.Redirect("Manager_Default.aspx");
 
                     }
-                    if (userRole.Equals("Admin"))
+                    if (userRole.Equals("Administrator"))
                     {
-                        Response.Redirect("AdminDefault.aspx");
+                        Response.Redirect("Admin_Default.aspx");
                     }
                 }
                 else

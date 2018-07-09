@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FYP_Vith
 {
-    public partial class Emp_Profile : System.Web.UI.Page
+    public partial class Manager_Enquiries : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

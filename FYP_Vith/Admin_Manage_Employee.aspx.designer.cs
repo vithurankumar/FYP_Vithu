@@ -10,6 +10,6 @@
 namespace FYP_Vith {
     
     
-    public partial class HRDefault {
+    public partial class Admin_Manage_Employee {
     }
 }
