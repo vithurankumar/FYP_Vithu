@@ -20,113 +20,129 @@
                 <table id="responsive-datatable" class="table table-bordered table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Fullname</th>
                             <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
+                            <th>Email</th>
+                            <th>Contact</th>
                             <th>Start date</th>
                             <th>Salary</th>
+                            <th>Control</th>
                         </tr>
                     </thead>
 
 
                     <tbody>
+                        <%
+                            while (sdr.Read())
+                            {
+                            %>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td><%=sdr["Fullname"] %></td>
+                            <td><%=sdr["Position"] %></td>
+                            <td><%=sdr["Email"] %></td>
+                            <td><%=sdr["Contact"] %></td>
+                            <td><%=sdr["Date_of_join"] %></td>
+                            <td><%=sdr["Salary"] %></td>
+                            <td><a class="btn btn-info" href="Admin_Update_Employee.aspx?editid=<%=sdr["Emp_id"] %>">Update</a> <a class="btn btn-danger" href="Admin_Manage_Employee.aspx?delete=<%=sdr["Emp_id"] %>&email=<%=sdr["Email"] %>">Delete</a></td>
                         </tr>
-
+                        <%} %>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
     <!-- end row -->
+
+    <!-- add employee modal -->
     <div id="add-emp-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Add Employee</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="fieldname" class="control-label">Name</label>
-                                <input type="text" class="form-control" id="fieldname" placeholder="your name">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="fieldemail" class="control-label">Email</label>
-                                <input type="email" class="form-control" id="fieldemail" placeholder="your email">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="fieldgender" class="control-label">Gender</label>
-                                <select class="form-control" id="fieldgender">
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                        </div>
+                <form method="post" action="Admin_Manage_Employee.aspx?addemployee=true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Add Employee</h4>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-3" class="control-label">Username</label>
-                                <input type="text" class="form-control" id="field-3" placeholder="email">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="fieldname" class="control-label">Name</label>
+                                    <input type="text" name="name" class="form-control" id="fieldname" placeholder="your name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="fieldemail" class="control-label">Email</label>
+                                    <input type="email" name="email" class="form-control" id="fieldemail" placeholder="your email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="contact" class="control-label">Contact</label>
+                                    <input type="number" name="contact" class="form-control" id="contact" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="fieldgender" class="control-label">Gender</label>
+                                    <select name="gender" class="form-control" id="fieldgender" required>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-4" class="control-label">Password</label>
-                                <input type="password" class="form-control" id="field-4" placeholder="password">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="field-3" class="control-label">Username</label>
+                                    <input type="text" name="username" class="form-control" id="field-3" placeholder="username" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="field-4" class="control-label">Password</label>
+                                    <input type="password" name="password" class="form-control" id="field-4" placeholder="password" required>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group no-margin">
-                                <label for="field-7" class="control-label">Date Join</label>
-                                <input type="date" class="form-control" id="field-7">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group no-margin">
+                                    <label for="field-7" class="control-label">Date Join</label>
+                                    <input type="date" name="datejoin" class="form-control" id="field-7" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group no-margin">
-                                <label for="position" class="control-label">Position</label>
-                                <select class="form-control" id="position" onchange="checksalary()">
-                                    <option value="Junior Employee">Junior Employee</option>
-                                    <option value="Senior Employee">Senior Employee</option>
-                                    <option value="Manager">Manager</option>
-                                    <option value="Senior Manager">Senior Manager</option>
-                                </select>
+                            <div class="col-md-6">
+                                <div class="form-group no-margin">
+                                    <label for="position" class="control-label">Position</label>
+                                    <select name="position" class="form-control" id="position" onchange="checksalary()" required>
+                                        <option value="Junior Employee">Junior Employee</option>
+                                        <option value="Senior Employee">Senior Employee</option>
+                                        <option value="Manager">Manager</option>
+                                        <option value="Senior Manager">Senior Manager</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
 
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group no-margin">
-                                <label for="salary" class="control-label">Salary</label>
-                                <input type="text" class="form-control" id="salary" disabled required="required" />
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group no-margin">
+                                    <label for="salary" class="control-label">Salary</label>
+                                    <input type="text" name="salary" class="form-control" id="salary" readonly required="required" />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-
+    <!-- end modal -->
 </asp:Content>

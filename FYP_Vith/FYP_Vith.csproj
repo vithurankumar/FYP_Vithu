@@ -69,6 +69,7 @@
     <Content Include="Admin_Enquiries.aspx" />
     <Content Include="Admin_Manage_Employee.aspx" />
     <Content Include="Admin_Manage_HRM.aspx" />
+    <Content Include="Admin_Update_Employee.aspx" />
     <Content Include="assets\images\user-2-icon.png" />
     <Content Include="assets\images\users\download.png" />
     <Content Include="Contactus.aspx" />
@@ -364,6 +365,13 @@
     </Compile>
     <Compile Include="Admin_Manage_HRM.aspx.designer.cs">
       <DependentUpon>Admin_Manage_HRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Update_Employee.aspx.cs">
+      <DependentUpon>Admin_Update_Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Update_Employee.aspx.designer.cs">
+      <DependentUpon>Admin_Update_Employee.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contactus.aspx.cs">
       <DependentUpon>Contactus.aspx</DependentUpon>

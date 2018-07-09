@@ -143,13 +143,13 @@
                             <a href="Admin_Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>A Dashboard </span></a>
                         </li>
                         <li>
-                            <a href="Admin_Enquiries.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>View Enquiries </span></a>
+                            <a href="Admin_Enquiries.aspx" class="waves-effect waves-primary"><i class="ti-email"></i><span>View Enquiries </span></a>
                         </li>
                         <li>
-                            <a href="Admin_Manage_Employee.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Manage Employees </span></a>
+                            <a href="Admin_Manage_Employee.aspx" class="waves-effect waves-primary"><i class="ti-face-smile"></i><span>Manage Employees </span></a>
                         </li>
                         <li>
-                            <a href="Admin_Manage_HRM.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Manage HRM </span></a>
+                            <a href="Admin_Manage_HRM.aspx" class="waves-effect waves-primary"><i class="ti-agenda"></i><span>Manage HRM </span></a>
                         </li>
                         <li class="menu-title">Information</li>
                         <li>
@@ -163,13 +163,13 @@
                             <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>H Dashboard </span></a>
                         </li>
                         <li>
-                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>View Enquiries </span></a>
+                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-email"></i><span>View Enquiries </span></a>
                         </li>
                         <li>
-                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Manage Employees </span></a>
+                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-face-smile"></i><span>Manage Employees </span></a>
                         </li>
                         <li>
-                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>Manage Allowances </span></a>
+                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-money"></i><span>Manage Allowances </span></a>
                         </li>
                         <li class="menu-title">Information</li>
                         <li>
@@ -304,7 +304,7 @@
                 $('#salary').val("6000");
             }
             if (position == "Manager") {
-                $('#salary').val("1000");
+                $('#salary').val("10000");
             }
             if (position == "Senior Manager") {
                 $('#salary').val("15000");
