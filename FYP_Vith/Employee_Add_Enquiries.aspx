@@ -44,7 +44,7 @@
                     Add enquiries to send your issues to the HRM, if you want to change your password or your info, you can make enquiries to the admin
                 </p>
 
-                <form action="#">
+                <form method="post" action="Employee_Add_Enquiries.aspx?addenquiries=true">
                     <div class="form-group">
                         <label for="sendto">Send to<span class="text-danger">*</span></label>
                         <select name="sendto"  required

@@ -92,5 +92,53 @@ namespace FYP_Vith
             closeConnection(conn);
             return flag;
         }
+
+        public static string getUserId(string username)
+        {
+            string result = "";
+            String query = "SELECT Id FROM Users where Username='" + username + "'";
+            SqlConnection conn = getConnection();
+            conn.Open();
+            SqlCommand cm = new SqlCommand(query, conn);
+            SqlDataReader sdr = cm.ExecuteReader();
+            while (sdr.Read())
+            {
+                result = sdr["Id"].ToString();
+            }
+            closeConnection(conn);
+            return result;
+        }
+
+        public static string getUserEmail(string username)
+        {
+            string result = "";
+            String query = "SELECT Email FROM Users where Username='" + username + "'";
+            SqlConnection conn = getConnection();
+            conn.Open();
+            SqlCommand cm = new SqlCommand(query, conn);
+            SqlDataReader sdr = cm.ExecuteReader();
+            while (sdr.Read())
+            {
+                result = sdr["Email"].ToString();
+            }
+            closeConnection(conn);
+            return result;
+        }
+
+        public static string getEmployeeId(string empid)
+        {
+            string result = "";
+            String query = "SELECT Emp_id FROM Employees where Emp_id='" + empid + "'";
+            SqlConnection conn = getConnection();
+            conn.Open();
+            SqlCommand cm = new SqlCommand(query, conn);
+            SqlDataReader sdr = cm.ExecuteReader();
+            while (sdr.Read())
+            {
+                result = sdr["Emp_id"].ToString();
+            }
+            closeConnection(conn);
+            return result;
+        }
     }
 }
