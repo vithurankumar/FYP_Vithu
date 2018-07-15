@@ -256,6 +256,8 @@
     <!-- Selection table -->
     <script src="plugins/datatables/dataTables.select.min.js"></script>
 
+    <script type="text/javascript" src="../plugins/parsleyjs/dist/parsley.min.js"></script>
+
     <!-- App js -->
     <script src="assets/js/jquery.core.js"></script>
     <script src="assets/js/jquery.app.js"></script>
@@ -292,7 +294,7 @@
                 .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
 
 
-            
+
         });
 
         function checksalary() {
@@ -312,14 +314,49 @@
         }
     </script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var sendto = document.getElementById("sendto");
+            var category = document.getElementById("category");
+            category.disabled = true;
+            sendto.onchange = function () {
+                category.disabled = false;
+                var categorylength = category.options.length;
+                for (j = 0; j < categorylength; j++) {
+                    category.options[i] = null;
+                }
+                var towho = sendto.options[sendto.selectedIndex].value;
+                if (towho === "Admin") {
+                    var adminopt = ['change employee password', 'change employee info'];
+                    for (i = 0; i < adminopt.length; i++) {
+                        var opt = document.createElement('option');
+                        opt.value = adminopt[i];
+                        opt.innerHTML = adminopt[i];
+                        category.appendChild(opt);
+                    }
+                }
+                else if (towho === "HRM") {
+                    var manageropt = ['allowance issues', 'deduction issues', 'other issues'];
+                    for (i = 0; i < manageropt.length; i++) {
+                        var optm = document.createElement('option');
+                        optm.value = manageropt[i];
+                        optm.innerHTML = manageropt[i];
+                        category.appendChild(optm);
+                    }
+                }
+            };
+        });
+
+    </script>
 
     <script type="text/javascript">
-            jQuery(document).ready(function ($) {
-                $('.counter').counterUp({
-                    delay: 100,
-                    time: 1200
-                });
+        jQuery(document).ready(function ($) {
+            $('.counter').counterUp({
+                delay: 100,
+                time: 1200
             });
+        });
     </script>
 
 </body>

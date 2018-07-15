@@ -11,7 +11,17 @@ namespace FYP_Vith
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["addfeedback"] != null)
+            {
+        
+                string email = Request.Form["email"];
+                string subject = Request.Form["subject"];
+                string message = Request.Form["message"];
 
+                string query = $"INSERT INTO Feedback (Subject, Email, Messages) VALUES ('{subject}','{email}','{message}')";
+                helper.executeQuery(query);
+                Response.Redirect("Contactus.aspx");
+            }
         }
     }
 }
