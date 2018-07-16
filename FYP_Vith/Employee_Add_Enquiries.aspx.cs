@@ -23,7 +23,7 @@ namespace FYP_Vith
                     string subject = Request.Form["subject"];
                     string messages = Request.Form["messages"];
 
-                    string query = $"INSERT INTO Enquiries (Emp_id, Subject, Email, Messages, Category, Sending_to) VALUES ('{empid}','{subject}','{email}','{messages}','{category}','{email}')";
+                    string query = $"INSERT INTO Enquiries (Emp_id, Subject, Email, Messages, Category, Sending_to, Status) VALUES ('{empid}','{subject}','{email}','{messages}','{category}','{email}','Pending')";
                     helper.executeQuery(query);
                     Response.Redirect("Employee_Add_Enquiries.aspx");
                 }
