@@ -1,0 +1,60 @@
+CREATE TABLE [dbo].[Allowances] (
+    [Al_id]             INT          IDENTITY (1, 1) NOT NULL,
+    [Emp_id]            INT          NULL,
+    [Month]             VARCHAR (50) NULL,
+    [Year]              INT          NULL,
+    [Overtime]          INT          NULL,
+    [Medical]           INT          NULL,
+    [Bonus]             INT          NULL,
+    [Deduct_pay]        INT          NULL,
+    [Deduct_leave_days] INT          NULL,
+    [Deduct_total]      INT          NULL,
+    [Total]             NCHAR (10)   NULL,
+    PRIMARY KEY CLUSTERED ([Al_id] ASC),
+    FOREIGN KEY ([Emp_id]) REFERENCES [dbo].[Employees] ([Emp_id])
+);
+
+CREATE TABLE [dbo].[Employees] (
+    [Emp_id]       INT          IDENTITY (1, 1) NOT NULL,
+    [Fullname]     VARCHAR (50) NULL,
+    [Gender]       NCHAR (10)   NULL,
+    [Contact]      VARCHAR (50) NULL,
+    [Email]        VARCHAR (50) NULL,
+    [Date_of_join] VARCHAR (50) NULL,
+    [Position]     VARCHAR (50) NULL,
+    [Salary]       INT          NULL,
+    PRIMARY KEY CLUSTERED ([Emp_id] ASC)
+);
+
+CREATE TABLE [dbo].[Enquiries] (
+    [Enq_id]      INT           IDENTITY (1, 1) NOT NULL,
+    [Emp_id]      INT           NULL,
+    [Subject]     VARCHAR (100) NULL,
+    [Email]       VARCHAR (50)  NULL,
+    [Messages]    VARCHAR (MAX) NULL,
+    [Category]    VARCHAR (50)  NULL,
+    [Sending_to]  VARCHAR (50)  NULL,
+    [Status]      VARCHAR (50)  NULL,
+    [DateCreated] DATETIME      DEFAULT (getdate()) NULL,
+    PRIMARY KEY CLUSTERED ([Enq_id] ASC),
+    FOREIGN KEY ([Emp_id]) REFERENCES [dbo].[Employees] ([Emp_id])
+);
+
+CREATE TABLE [dbo].[Feedback] (
+    [F_id]        INT           IDENTITY (1, 1) NOT NULL,
+    [Subject]     VARCHAR (100) NULL,
+    [Email]       VARCHAR (50)  NULL,
+    [Messages]    VARCHAR (MAX) NULL,
+    [DateCreated] DATETIME      DEFAULT (getdate()) NULL,
+    PRIMARY KEY CLUSTERED ([F_id] ASC)
+);
+
+CREATE TABLE [dbo].[Users] (
+    [Id]       INT          IDENTITY (1, 1) NOT NULL,
+    [Username] VARCHAR (50) NULL,
+    [Email]    VARCHAR (50) NULL,
+    [Password] VARCHAR (50) NULL,
+    [UserRole] VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
