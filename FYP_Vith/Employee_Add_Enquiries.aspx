@@ -1,37 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="Employee_Add_Enquiries.aspx.cs" Inherits="FYP_Vith.Employee_Add_Enquiries" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        
 
-            var sendto = document.getElementById("sendto");
-            var category = document.getElementById("category");
-            category.disabled = true;
-            sendto.onchange = function () {
-                category.disabled = false;
-                var towho = sendto.options[e.selectedIndex].value;
-                if (towho === "Admin") {
-                    var adminopt = ['change employee password', 'change employee info'];
-                    for (i = 0; i < adminopt.length; i++) {
-                        var opt = document.createElement('option');
-                        opt.value = adminopt[i];
-                        opt.innerHTML = adminopt[i];
-                        category.appendChild(opt);
-                    }
-                }
-                else if (towho === "HRM") {
-                    var manageropt = ['allowance issues', 'deduction issues', 'other issues'];
-                    for (i = 0; i < manageropt.length; i++) {
-                        var optm = document.createElement('option');
-                        optm.value = manageropt[i];
-                        optm.innerHTML = manageropt[i];
-                        category.appendChild(optm);
-                    }
-                }
-            }
-        
-
-    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -59,6 +29,7 @@
                         <label for="category">Category<span class="text-danger">*</span></label>
                         <select name="category" required
                             class="form-control" id="category">
+                            <option></option>
                         </select>
                     </div>
                     <div class="form-group">

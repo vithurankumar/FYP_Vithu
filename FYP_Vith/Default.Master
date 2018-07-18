@@ -127,8 +127,8 @@
                             <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="ti-paint-bucket"></i><span>Enquiries </span>
                                 <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="ui-buttons.html">Add Enquiry</a></li>
-                                <li><a href="ui-buttons.html">View Enquiry</a></li>
+                                <li><a href="Employee_Add_Enquiries.aspx">Add Enquiry</a></li>
+                                <li><a href="Employee_View_Enquiries.aspx">View Enquiry</a></li>
                             </ul>
                         </li>
                         <li class="menu-title">Information</li>
@@ -321,15 +321,18 @@
             var category = document.getElementById("category");
             category.disabled = true;
             sendto.onchange = function () {
-                category.disabled = false;
                 var categorylength = category.options.length;
-                for (j = 0; j < categorylength; j++) {
-                    category.options[i] = null;
+                for (var a = categorylength-1; a >=0; a--) {
+                    category.remove(a);
                 }
+                category.disabled = false;
+
+
                 var towho = sendto.options[sendto.selectedIndex].value;
                 if (towho === "Admin") {
+
                     var adminopt = ['change employee password', 'change employee info'];
-                    for (i = 0; i < adminopt.length; i++) {
+                    for (var i = 0; i < adminopt.length; i++) {
                         var opt = document.createElement('option');
                         opt.value = adminopt[i];
                         opt.innerHTML = adminopt[i];

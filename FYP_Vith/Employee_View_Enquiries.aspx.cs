@@ -13,7 +13,7 @@ namespace FYP_Vith
         public SqlDataReader sdr;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserRole"] != null && Session["Username"] != null && Session["UserRole"].ToString() == "Employee")
+            if (Session["UserRole"] != null && Session["UserRole"].ToString() == "Employee")
             {
                 string username = Session["Username"].ToString();
                 string empemail = helper.getUserEmail(username);
@@ -23,6 +23,10 @@ namespace FYP_Vith
                 conn.Open();
                 SqlCommand cm = new SqlCommand(query, conn);
                 sdr = cm.ExecuteReader();
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
             }
             
         }

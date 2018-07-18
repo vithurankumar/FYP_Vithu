@@ -125,10 +125,10 @@ namespace FYP_Vith
             return result;
         }
 
-        public static string getEmployeeId(string empid)
+        public static string getEmployeeId(string email)
         {
             string result = "";
-            String query = "SELECT Emp_id FROM Employees where Emp_id='" + empid + "'";
+            String query = "SELECT Emp_id FROM Employees where Email='" + email + "'";
             SqlConnection conn = getConnection();
             conn.Open();
             SqlCommand cm = new SqlCommand(query, conn);
