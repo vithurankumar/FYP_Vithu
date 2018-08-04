@@ -53,7 +53,7 @@ namespace FYP_Vith
                 {
                     Response.Write("<script>alert('change password success')</script>");
                 }
-                if (Request.QueryString["changeinfotrue"] != null)
+                if (Request.QueryString["editinfotrue"] != null)
                 {
                     Response.Write("<script>alert('change info success')</script>");
                 }

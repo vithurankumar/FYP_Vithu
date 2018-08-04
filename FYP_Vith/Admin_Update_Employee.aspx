@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="p-20">
-                            <form class="form-horizontal" role="form" method="post" action="Admin_Update_Employee.aspx?edit=true">
+                            <form class="form-horizontal" role="form" method="post" action="Admin_Update_Employee.aspx?editid=<%=Request.QueryString["editid"] %>&edit=true">
                                 <div class="form-group row">
                                     <label class="col-2 col-form-label">Full Name</label>
                                     <div class="col-10">
@@ -98,7 +98,7 @@
                                 <div class="row justify-content-center">
 
                                     <button class="col-sm-3 btn btn-confirm" style="margin: 1.1em" type="submit">Edit Change </button>
-                                    <button class="col-sm-3 btn btn-confirm" style="margin: 1.1em" data-toggle="modal" data-target="#changepass">Change Password </button>
+                                    <button class="col-sm-3 btn btn-confirm" style="margin: 1.1em" type="button" data-toggle="modal" data-target="#changepass">Change Password </button>
                                     <button class="col-sm-3 btn btn-cancel" style="margin: 1.1em" type="reset">Cancel </button>
                                     <a class="col-sm-3 btn btn-primary" style="margin: 1.1em" href="Admin_Manage_Employee.aspx">Back to Manage Employees</a>
                                 </div>
@@ -119,7 +119,7 @@
     <div id="changepass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="post" action="Admin_Update_Employee.aspx?changepass=true">
+                <form method="post" action="Admin_Update_Employee.aspx?editid=<%=Request.QueryString["editid"] %>&changepass=true">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title">Change Employee Password</h4>
