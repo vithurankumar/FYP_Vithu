@@ -47,18 +47,10 @@
                         {
                     %>
                     <li class="list-inline-item dropdown notification-list">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link waves-effect waves-light nav-user" href="Login.aspx">
                             <%--<img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">--%>
-                            Authenticate
+                            Login
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
-                            <!-- item-->
-                            <a href="Login.aspx" class="dropdown-item notify-item">
-                                <i class="mdi mdi-account"></i><span>Login</span>
-                            </a>
-
-                        </div>
                     </li>
                     <%}
                         else
@@ -163,13 +155,13 @@
                             <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-home"></i><span>H Dashboard </span></a>
                         </li>
                         <li>
-                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-email"></i><span>View Enquiries </span></a>
+                            <a href="Manager_Enquiries.aspx" class="waves-effect waves-primary"><i class="ti-email"></i><span>View Enquiries </span></a>
                         </li>
                         <li>
-                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-face-smile"></i><span>Manage Employees </span></a>
+                            <a href="Manager_Manage_Employee.aspx" class="waves-effect waves-primary"><i class="ti-face-smile"></i><span>Manage Employees </span></a>
                         </li>
                         <li>
-                            <a href="Default.aspx" class="waves-effect waves-primary"><i class="ti-money"></i><span>Manage Allowances </span></a>
+                            <a href="Manager_Manage_Allowance.aspx" class="waves-effect waves-primary"><i class="ti-money"></i><span>Manage Allowances </span></a>
                         </li>
                         <li class="menu-title">Information</li>
                         <li>
@@ -312,6 +304,15 @@
                 $('#salary').val("15000");
             }
         }
+        $(".editempbut").on("click", function (event) {
+            var empidm = $(this).data('editemp').id;
+            var empdposm = $(this).data('editemp').position;
+            var empsalm = $(this).data('editemp').salary;
+            $(".modal-body #mempid").val(empidm);
+            $(".modal-body #salary").val(empsalm);
+            $(".modal-body #position").val(empdposm);
+        });
+
     </script>
 
     <script type="text/javascript">

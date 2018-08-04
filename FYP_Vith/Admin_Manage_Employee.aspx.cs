@@ -49,6 +49,14 @@ namespace FYP_Vith
                     helper.executeQuery(querydeleteuser);
                     Response.Redirect("Admin_Manage_Employee.aspx");
                 }
+                if (Request.QueryString["changepasstrue"] != null)
+                {
+                    Response.Write("<script>alert('change password success')</script>");
+                }
+                if (Request.QueryString["changeinfotrue"] != null)
+                {
+                    Response.Write("<script>alert('change info success')</script>");
+                }
             }
             else
             {

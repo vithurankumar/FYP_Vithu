@@ -1,15 +1,24 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Manager_Default.aspx.cs" Inherits="FYP_Vith.Manager_Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="Manager_Default.aspx.cs" Inherits="FYP_Vith.Manager_Default" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row">
+        <div class="col-12">
+            <div class="card-box">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Manager Dashboard</h1>
+                        <p class="text-muted">
+                                Manager have access to manage employees allowances. and in case of increment the position of the employees.
+                        </p>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+
+</asp:Content>

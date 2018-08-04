@@ -43,12 +43,21 @@ namespace FYP_Vith
                 }
                 if (Request.QueryString["edit"] != null)
                 {
+                    string empid = Request.QueryString["editid"];
                     String name = Request.Form["name"];
                     String gender = Request.Form["gender"];
                     String contact = Request.Form["contact"];
-                    String queryedit = $"UPDATE Employees SET Fullname='{name}',Gender='{gender}',Contact='{contact}'";
+                    String queryedit = $"UPDATE Employees SET Fullname='{name}',Gender='{gender}',Contact='{contact}' WHERE Emp_id={empid}";
                     helper.executeQuery(queryedit);
-                    Response.Redirect("Admin_Manage_Employee.aspx");
+                    Response.Redirect("Admin_Manage_Employee.aspx?editinfotrue=true");
+                }
+                if (Request.QueryString["changepass"] != null)
+                {
+                    string empid = Request.QueryString["editid"];
+                    String newpass = Request.Form["password"];
+                    String queryedit = $"UPDATE Users SET Password='{newpass}' WHERE Id={empid}";
+                    helper.executeQuery(queryedit);
+                    Response.Redirect("Admin_Manage_Employee.aspx?changepasstrue=true");
                 }
             }
             else

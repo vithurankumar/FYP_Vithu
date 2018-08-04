@@ -21,6 +21,7 @@
                     <!-- bg-success, bg-danger -->
                     <h3 class="portlet-title"><%=sdr["Category"] %>
                     </h3>
+                    
                     <div class="portlet-widgets">
                         <span>To: <%=sdr["Sending_to"] %></span>
                         <span class="divider"></span>

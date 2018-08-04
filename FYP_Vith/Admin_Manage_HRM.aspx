@@ -56,7 +56,7 @@
     <div id="add-emp-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="post" action="Admin_Manage_Employee.aspx?addemployee=true">
+                <form method="post" action="Admin_Manage_Employee.aspx?addhrm=true">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title">Add HRM</h4>
