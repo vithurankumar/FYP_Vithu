@@ -15,12 +15,17 @@ namespace FYP_Vith
         {
             if (Session["UserRole"] != null && Session["UserRole"].ToString() == "Employee")
             {
-
-                String query = $"SELECT a.Month, a.Year, a.Overtime, a.Medical, a.Bonus, a.Deduct_pay,a.Deduct_leave_days, a.Total, e.Fullname,e.Salary FROM Allowances a INNER JOIN Employees e ON a.Emp_id=e.Emp_id ORDER BY Month,Year DESC;";
+                string username = Session["Username"].ToString();
+                string empemail = helper.getUserEmail(username);
+                String query = $"SELECT a.*, e.* FROM Allowances a INNER JOIN Employees e ON a.Emp_id=e.Emp_id WHERE e.Email='{empemail}'";
                 SqlConnection conn = helper.getConnection();
                 conn.Open();
                 SqlCommand cm = new SqlCommand(query, conn);
                 sdr = cm.ExecuteReader();
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
             }
         }
     }
