@@ -29,21 +29,19 @@
                 <p class="text-muted font-14 m-b-30">
                     Employee allowances monthly
                 </p>
-
-
                 <table id="responsive-datatable" class="table table-bordered table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Fullname</th>
                             <th>Month</th>
                             <th>Year</th>
-                            <th>Gross Salary</th>
+                            <th>Net Salary</th>
                             <th>Overtime</th>
                             <th>Medical</th>
                             <th>Bonus</th>
                             <th>Deduct Direct</th>
                             <th>Deduct Leave</th>
-                            <th>Net Salary</th>
+                            <th>Gross Salary</th>
                         </tr>
                     </thead>
 

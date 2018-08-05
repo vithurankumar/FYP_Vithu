@@ -10,6 +10,6 @@
 namespace FYP_Vith {
     
     
-    public partial class Manager_Manage_Allowance {
+    public partial class Manager_Allowance_Details {
     }
 }

@@ -140,5 +140,24 @@ namespace FYP_Vith
             closeConnection(conn);
             return result;
         }
+
+        public Dictionary<string, string> getAllEmployees()
+        {
+
+            var result = new Dictionary<string, string>();
+            String query = "SELECT Emp_id, Salary, Fullname FROM Employees";
+            SqlConnection conn = getConnection();
+            conn.Open();
+            SqlCommand cm = new SqlCommand(query, conn);
+            SqlDataReader sdr = cm.ExecuteReader();
+
+            while (sdr.Read())
+            {
+
+                result.Add(sdr["Emp_id"].ToString()+","+ sdr["Salary"].ToString(), sdr["Fullname"].ToString());
+            }
+            closeConnection(conn);
+            return result;
+        }
     }
 }

@@ -77,6 +77,7 @@
     <Content Include="Employee_Default.aspx" />
     <Content Include="Employee_Profile.aspx" />
     <Content Include="Employee_View_Enquiries.aspx" />
+    <Content Include="Manager_Allowance_Details.aspx" />
     <Content Include="Manager_Default.aspx" />
     <Content Include="Manager_Enquiries.aspx" />
     <Content Include="Manager_Manage_Allowance.aspx" />
@@ -437,6 +438,13 @@
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Allowance_Details.aspx.cs">
+      <DependentUpon>Manager_Allowance_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager_Allowance_Details.aspx.designer.cs">
+      <DependentUpon>Manager_Allowance_Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager_Default.aspx.cs">
       <DependentUpon>Manager_Default.aspx</DependentUpon>

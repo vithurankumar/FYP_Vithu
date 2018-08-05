@@ -289,6 +289,39 @@
 
         });
 
+        function checkbonus() {
+            var overtime = $('#overtime').val();
+            var medical = $('#medical').val();
+            var bonus = $('#bonus').val();
+            var totovertime = parseInt(overtime) * 15;
+            var totalbonus = totovertime + parseInt(medical) + parseInt(bonus)
+            $('#totbonus').val(totalbonus);
+        }
+
+        function checkdeduct() {
+            var dirdeduct = $('#dirdeduct').val();
+            var leavedays = $('#leavedays').val();
+            var leavededuct = parseInt(leavedays) * 50;
+            var totaldeduct = parseInt(dirdeduct) + leavededuct
+            $('#totdeduct').val(totaldeduct);
+        }
+
+        function checkgross() {
+            var totbonus = $('#totbonus').val();
+            var totdeduct = $('#totdeduct').val();
+            var netsal = $('#netsal').val();
+            var sumgross = (parseInt(netsal) + parseInt(totbonus)) - (parseInt(totdeduct));
+            var totaltax = sumgross*0.02;
+            var totalgross = sumgross - totaltax;
+            $('#grosssal').val(totalgross);
+        }
+        function assignnetsal() {
+            var empsal = $('#empid').find(":selected").val();
+            var empsals = empsal.split(",");
+            var netsalary = empsals[1];
+            $('#netsal').val(netsalary);
+        }
+
         function checksalary() {
             var position = $('#position').find(":selected").text();
             if (position == "Junior Employee") {
