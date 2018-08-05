@@ -54,14 +54,10 @@
                                     <label class="col-2 col-form-label">Gender</label>
                                     <div class="col-10">
                                         <select name="gender" class="form-control" required>
-                                            <option value="Male" <%if (gender.Equals("Male"))
-                                                { %>selected<%}
-                                                else
-                                                { %><%} %>>Male</option>
-                                            <option value="Female" <%if (gender.Equals("Female"))
-                                                { %>selected<%}
-                                                else
-                                                { %><%} %>>Female</option>
+                                            <option <%if (gender.Trim() == "Male")
+                                                { %>selected<%} %> value="Male">Male</option>
+                                            <option <%if (gender.Trim() == "Female")
+                                                { %>selected<%} %> value="Female">Female</option>
                                         </select>
                                     </div>
                                 </div>
