@@ -117,10 +117,12 @@
                                 <div class="form-group no-margin">
                                     <label for="position" class="control-label">Position</label>
                                     <select name="position" class="form-control" id="position" onchange="checksalary()" required>
-                                        <option value="Junior Employee">Junior Employee</option>
-                                        <option value="Senior Employee">Senior Employee</option>
-                                        <option value="Manager">Manager</option>
-                                        <option value="Senior Manager">Senior Manager</option>
+                                        <option value="IT Trainee">IT Trainee</option>
+                                        <option value="IT Junior">IT Junior</option>
+                                        <option value="IT Senior">IT Senior</option>
+                                        <option value="Business Trainee">Business Trainee</option>
+                                        <option value="Business Junior">Business Junior</option>
+                                        <option value="Business Senior">Business Senior</option>
                                     </select>
                                 </div>
                             </div>

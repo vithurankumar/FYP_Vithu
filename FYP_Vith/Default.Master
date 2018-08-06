@@ -324,17 +324,23 @@
 
         function checksalary() {
             var position = $('#position').find(":selected").text();
-            if (position == "Junior Employee") {
+            if (position == "IT Trainee") {
+                $('#salary').val("3500");
+            }
+            if (position == "IT Junior") {
+                $('#salary').val("6500");
+            }
+            if (position == "IT Senior") {
+                $('#salary').val("9500");
+            }
+            if (position == "Business Trainee") {
                 $('#salary').val("3000");
             }
-            if (position == "Senior Employee") {
+            if (position == "Business Junior") {
                 $('#salary').val("6000");
             }
-            if (position == "Manager") {
-                $('#salary').val("10000");
-            }
-            if (position == "Senior Manager") {
-                $('#salary').val("15000");
+            if (position == "Business Senior") {
+                $('#salary').val("9000");
             }
         }
         $(".editempbut").on("click", function (event) {
