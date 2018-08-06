@@ -51,8 +51,8 @@
                         %>
                         <hr />
                         <div class="form-group">
-                            <a href="Admin_Enquiries.aspx?eid=<%=sdr["Enq_id"] %>&status=Approved" class="btn btn-success">Approve</a>
-                            <a href="Admin_Enquiries.aspx?eid=<%=sdr["Enq_id"] %>&status=Declined" class="btn btn-danger">Decline</a>
+                            <a href="Manager_Enquiries.aspx?eid=<%=sdr["Enq_id"] %>&status=Approved" class="btn btn-success">Approve</a>
+                            <a href="Manager_Enquiries.aspx?eid=<%=sdr["Enq_id"] %>&status=Declined" class="btn btn-danger">Decline</a>
                         </div>
                         <%} %>
                         <hr />

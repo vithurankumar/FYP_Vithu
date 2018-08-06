@@ -9,7 +9,7 @@ namespace FYP_Vith
 {
     public class helper
     {
-        public static SqlConnection getConnection()
+        public static SqlConnection getConnection() 
         {
             SqlConnection conn = null;
 
